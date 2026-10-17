@@ -1,0 +1,28 @@
+/* --- GENEL TEMA VE YAZI TİPİ AYARLARI --- */
+body {
+  margin: 0;
+  background-color: #FDF4F5; 
+  
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Temiz bir görünüm için metin düzeltmeleri */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Uygulama ana kapsayıcısı */
+#root {
+  /* İçeriği dikey ve yatayda ortalar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Kod blokları için varsayılan fontu koruruz */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

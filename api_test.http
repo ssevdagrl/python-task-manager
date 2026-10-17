@@ -1,0 +1,50 @@
+﻿### Test 1: KullanÄ±cÄ± KaydÄ± (POST /api/auth/register)
+# AMAÃ‡: Yeni kullanÄ±cÄ± kaydÄ±nÄ± ve ÅŸifre ÅŸifrelemesinin Ã§alÄ±ÅŸtÄ±ÄŸÄ±nÄ± doÄŸrular. (Vize Gereksinimi: 3, 5)
+POST http://127.0.0.1:8000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "testuser4",
+    "email": "test4@example.com",
+    "password": "GuvenliSifre2025" 
+}
+
+### Test 2: BaÅŸarÄ±lÄ± GiriÅŸ ve Token Alma (POST /api/auth/login)
+# AMAÃ‡: BaÅŸarÄ±lÄ± giriÅŸ ile kimlik doÄŸrulama token'Ä±nÄ±n alÄ±ndÄ±ÄŸÄ±nÄ± doÄŸrular. (Vize Gereksinimi: 3)
+POST http://127.0.0.1:8000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "testuser4",
+    "password": "GuvenliSifre2025" 
+}
+
+### Test 3: GeÃ§ersiz GiriÅŸ Testi (POST /api/auth/login)
+# AMAÃ‡: YanlÄ±ÅŸ ÅŸifre ile 401 Unauthorized hatasÄ±nÄ±n dÃ¶ndÃ¼rÃ¼ldÃ¼ÄŸÃ¼nÃ¼ doÄŸrular. (Vize Gereksinimi: 4)
+POST http://127.0.0.1:8000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "testuser3",
+    "password": "YanlisSifre2025" 
+}
+
+### Test 4: GÃ¶rev Ekleme (POST /api/tasks/)
+# AMAÃ‡: Token ile yetkilendirilmiÅŸ bir kullanÄ±cÄ±nÄ±n yeni gÃ¶rev ekleyebildiÄŸini doÄŸrular. (Vize Gereksinimi: 1)
+POST http://127.0.0.1:8000/api/tasks/
+Content-Type: application/json
+Authorization: Token YOUR_TOKEN_HERE 
+# DÄ°KKAT: Token deÄŸeri, Test 2'den alÄ±nan tokenile deÄŸiÅŸtirilmelidir.
+
+{
+    "title": "Ä°lk GÃ¶rev Planlama",
+    "description": "Frontend iÃ§in sayfa akÄ±ÅŸÄ±nÄ± belirle.",
+    "category": "Kodlama",
+    "status": "YapÄ±lacak",
+    "dueDate": "2025-11-20"
+}
+
+### Test 5: GÃ¶revleri Listeleme (GET /api/tasks/)
+# AMAÃ‡: YetkilendirilmiÅŸ kullanÄ±cÄ±nÄ±n yalnÄ±zca kendi gÃ¶revlerini listelediÄŸini doÄŸrular. (Vize Gereksinimi: 2)
+GET http://127.0.0.1:8000/api/tasks/
+Authorization: Token YOUR_TOKEN_HERE

@@ -1,0 +1,46 @@
+/* Ana Uygulama Kapsayıcısı */
+.App {
+  text-align: center; /* İçindeki içeriği yatayda ortalar */
+}
+
+/* Uygulama Logosu (Genellikle React veya başka bir SVG) */
+.App-logo {
+  height: 40vmin; /* Görünüm yüksekliğinin %40'ı kadar yükseklik */
+  pointer-events: none; /* Üzerine tıklama olaylarını devre dışı bırakır */
+}
+
+/* --- Animasyon Ayarları --- */
+
+/* Hareket duyarlılığını azaltmış kullanıcıları hariç tutar */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear; /* Logoya animasyon uygular */
+  }
+}
+
+/* Uygulama Başlığı/Navigasyon Alanı */
+.App-header {
+  background-color: #282c34; /* Koyu gri arka plan */
+  min-height: 100vh; /* Ekranın tamamını kaplar */
+  display: flex; /* İçeriği hizalamak için Flexbox kullanır */
+  flex-direction: column; /* İçeriği dikey sıralar */
+  align-items: center; /* Yatayda hizala (ortala) */
+  justify-content: center; /* Dikeyde hizala (ortala) */
+  font-size: calc(10px + 2vmin); /* Font boyutunu ayarlar */
+  color: white; /* Yazı rengi beyaz */
+}
+
+/* Uygulama İçindeki Bağlantıların Stili */
+.App-link {
+  color: #61dafb; /* Açık mavi renk */
+}
+
+/* --- Animasyon Anahtar Kareleri --- */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); /* Başlangıç: 0 derece döndür */
+  }
+  to {
+    transform: rotate(360deg); /* Bitiş: 360 derece döndür (tam tur) */
+  }
+}
